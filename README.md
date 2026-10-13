@@ -141,7 +141,7 @@ This prevents simple console score manipulation and impersonation without a reco
 | `PORT` | `3000` | HTTP and Socket.IO port |
 | `HOST` | `0.0.0.0` | Bind address; use `127.0.0.1` for local-only access |
 | `NODE_ENV` | development | Set `production` for deployment |
-| `APP_ORIGIN` | `http://localhost:3000` | Exact browser origin, no trailing slash; required in production |
+| `APP_ORIGIN` | `RENDER_EXTERNAL_URL` or `http://localhost:3000` | Exact browser origin, no trailing slash; required in production outside Render |
 | `HOST_KEY` | empty | Teacher key; required with 16+ characters in production |
 | `TRUST_PROXY` | `0` | Set `1` only behind exactly one trusted reverse proxy |
 | `MAX_ROOMS` | `100` | Arena limit, 1–1000 |
@@ -162,6 +162,14 @@ npm start         # run the server with optional .env
 The tests cover streak scoring, wrong answers, replay/rapid submissions, hidden answer keys, freezes, shields, drain, scramble, upgrade limits, invalid/atomic purchases, room expiry, nickname recovery, unauthorized host controls, actual multiplayer connections, and host-disconnect pause/recovery. They use test-only quizzes/server sessions and do not require an external service. Browser QA should additionally check two devices, mobile touch controls, brief network loss, a host refresh, and the final leaderboard.
 
 ## Deploy to production
+
+### Render preview deployment
+
+The repository includes `render.yaml` for a free, single-instance Docker web service in Singapore. In the [Render dashboard](https://dashboard.render.com), sign in, authorize access to **only this GitHub repository**, select **New → Blueprint**, and select `RealOmlit/spark-arena`. Review the free service and deploy. Render builds the Dockerfile and generates a random `HOST_KEY`; retrieve that teacher key from the service's **Environment** panel and keep it private. The app uses Render's automatically supplied `RENDER_EXTERNAL_URL` as its allowed browser origin, so no guessed URL is needed. `APP_ORIGIN`, if supplied, takes precedence.
+
+The blueprint uses `/healthz`, trusts Render's reverse proxy, and redeploys after GitHub checks pass. Render supplies TLS and the runtime port. After deployment, open the returned HTTPS URL and test a host and student in separate tabs.
+
+Render's free service sleeps after inactivity and is intended for previews, not production. Sleep/restarts clear active rooms. For regular classroom use, upgrade the existing service to an always-on paid instance after reviewing the price; keep one replica. See [Render free service limits](https://render.com/docs/free) and [Render WebSockets](https://render.com/docs/websocket).
 
 Deploy to a **long-running Node service** or VM with WebSocket support. Static-only hosting and per-request serverless functions cannot hold these in-memory Socket.IO rooms. Use **one instance**; do not enable autoscaling, Node cluster mode, or multiple replicas.
 

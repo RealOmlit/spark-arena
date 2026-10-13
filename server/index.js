@@ -9,10 +9,13 @@ import { quizzes, catalog } from './quizzes.js';
 import { wireSockets } from './socket.js';
 
 export function createApp(config = {}) {
-  const origin = config.origin ?? process.env.APP_ORIGIN ?? 'http://localhost:3000';
+  const configuredOrigin = config.origin ?? process.env.APP_ORIGIN ?? process.env.RENDER_EXTERNAL_URL;
+  const origin = configuredOrigin ?? 'http://localhost:3000';
   const hostKey = config.hostKey ?? process.env.HOST_KEY ?? '';
   const production = process.env.NODE_ENV === 'production';
-  if (production && (!process.env.APP_ORIGIN || hostKey.length < 16)) throw new Error('Production requires APP_ORIGIN and HOST_KEY (16+ characters).');
+  if (production && (!configuredOrigin || hostKey.length < 16)) throw new Error('Production requires APP_ORIGIN (or RENDER_EXTERNAL_URL) and HOST_KEY (16+ characters).');
+  const parsedOrigin = new URL(origin);
+  if (!['http:', 'https:'].includes(parsedOrigin.protocol) || parsedOrigin.origin !== origin) throw new Error('APP_ORIGIN must be an HTTP(S) origin without a path or trailing slash.');
   function limit(name, fallback, max) {
     const value = Number(process.env[name] ?? fallback);
     if (!Number.isInteger(value) || value < 1 || value > max) throw new Error(`Invalid ${name}.`);
