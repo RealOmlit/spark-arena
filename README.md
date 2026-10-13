@@ -1,5 +1,15 @@
 # Spark Arena
 
+**Play now: [Spark Arena on GitHub Pages](https://realomlit.github.io/spark-arena/)**
+
+The GitHub Pages edition is a complete browser game: choose a quiz, answer questions, read explanations, build streaks, buy upgrades and attacks, and compete against three clearly labeled computer rivals. It needs no login or server. It is solo play, not multiplayer. Answer keys and scores are local and inspectable; personal bests are stored only in your browser. Backgrounding the tab pauses the game. Reloading ends the current solo session.
+
+### GitHub Pages deployment
+
+The `static/` directory contains the browser edition (`index.html`, `app.js`, and `engine.js`). `npm run build:pages` compiles Tailwind and copies the game, favicon, and quiz catalog into the ignored `pages-dist/` build directory. The `.github/workflows/pages.yml` workflow verifies the code and deploys that directory on every push to `main`. In repository **Settings → Pages → Source**, select **GitHub Actions**. Publishing the repository root directly shows this README instead of the game. All asset paths are relative so the game works under `/spark-arena/`.
+
+To preview the browser edition locally, run `npm ci`, then `npm run build:pages`, and serve `pages-dist/` with any local static HTTP server. The Node multiplayer implementation below remains available for deployment to a persistent Node host.
+
 A real-time classroom quiz platform with a shared timer, individual question streams, a competitive Spark Points economy, and a live power-up shop. Built with **Node.js + Express + Socket.IO**, vanilla JavaScript, and locally compiled **Tailwind CSS 4**. No CDN scripts, frontend framework, account signup, or database required.
 
 ## Quick start

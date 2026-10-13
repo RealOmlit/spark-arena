@@ -4,3 +4,6 @@ node_modules/
 coverage/
 *.log
 public/styles.css
+
+# Static deployment build
+pages-dist/

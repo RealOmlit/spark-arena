@@ -11,7 +11,8 @@
     "dev": "npm run build && node --watch --env-file-if-exists=.env server/index.js",
     "start": "node --env-file-if-exists=.env server/index.js",
     "test": "node --test",
-    "check": "node --check server/index.js && node --check server/game.js && node --check server/socket.js && node --check public/app.js"
+    "check": "node --check server/index.js && node --check server/game.js && node --check server/socket.js && node --check public/app.js && node --check static/app.js && node --check static/engine.js",
+    "build:pages": "npm run build && node scripts/build-pages.js"
   },
   "dependencies": {
     "express": "^5.1.0",
