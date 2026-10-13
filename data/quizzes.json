@@ -1,0 +1,41 @@
+[
+  {
+    "id": "science-sparks", "title": "Science Sparks", "subject": "Science", "description": "Big ideas. Tiny particles. A whole lot of discovery.",
+    "questions": [
+      { "prompt": "Which planet is known as the Red Planet?", "answers": ["Mars", "Venus", "Jupiter", "Mercury"], "correctIndex": 0, "explanation": "Iron oxide on its surface gives Mars its reddish colour." },
+      { "prompt": "What do plants absorb from the atmosphere during photosynthesis?", "answers": ["Carbon dioxide", "Oxygen", "Helium", "Hydrogen"], "correctIndex": 0, "explanation": "Plants use carbon dioxide, water and light to make sugars." },
+      { "prompt": "Which force keeps planets in orbit around the Sun?", "answers": ["Gravity", "Friction", "Magnetism", "Buoyancy"], "correctIndex": 0, "explanation": "Gravity attracts objects with mass to each other." },
+      { "prompt": "Which organ pumps blood around your body?", "answers": ["Heart", "Lungs", "Brain", "Kidneys"], "correctIndex": 0, "explanation": "The heart pumps blood through the circulatory system." },
+      { "prompt": "What is the chemical formula for water?", "answers": ["H₂O", "CO₂", "O₂", "NaCl"], "correctIndex": 0, "explanation": "Each water molecule has two hydrogen atoms and one oxygen atom." },
+      { "prompt": "Which state of matter has a fixed volume but takes the shape of its container?", "answers": ["Liquid", "Solid", "Gas", "Plasma"], "correctIndex": 0, "explanation": "Liquids flow to fit their containers while keeping roughly the same volume." },
+      { "prompt": "What is the smallest unit of a living organism?", "answers": ["Cell", "Organ", "Tissue", "Atom"], "correctIndex": 0, "explanation": "Cells are the basic structural and functional units of life." },
+      { "prompt": "Which material usually conducts electricity well?", "answers": ["Copper", "Rubber", "Glass", "Dry wood"], "correctIndex": 0, "explanation": "Copper has electrons that can move freely through the metal." }
+    ]
+  },
+  {
+    "id": "number-rush", "title": "Number Rush", "subject": "Mathematics", "description": "Quick thinking meets a little mathematical magic.",
+    "questions": [
+      { "prompt": "What is 12 × 8?", "answers": ["96", "86", "108", "88"], "correctIndex": 0, "explanation": "12 × 8 = (10 × 8) + (2 × 8) = 80 + 16 = 96." },
+      { "prompt": "Which number is prime?", "answers": ["17", "21", "27", "33"], "correctIndex": 0, "explanation": "17 has exactly two positive divisors: 1 and 17." },
+      { "prompt": "What is 25% of 200?", "answers": ["50", "25", "75", "100"], "correctIndex": 0, "explanation": "25% is one quarter. 200 ÷ 4 = 50." },
+      { "prompt": "How many degrees are in the interior angles of a triangle?", "answers": ["180°", "90°", "270°", "360°"], "correctIndex": 0, "explanation": "The interior angles of a triangle on a flat plane sum to 180°." },
+      { "prompt": "What is the square root of 144?", "answers": ["12", "14", "11", "16"], "correctIndex": 0, "explanation": "12 × 12 = 144." },
+      { "prompt": "Solve: 3x + 5 = 20", "answers": ["x = 5", "x = 3", "x = 8", "x = 15"], "correctIndex": 0, "explanation": "Subtract 5 from both sides, then divide by 3." },
+      { "prompt": "Which fraction equals 0.75?", "answers": ["3/4", "1/2", "2/3", "1/4"], "correctIndex": 0, "explanation": "75/100 simplifies to 3/4." },
+      { "prompt": "What is the area of a rectangle 7 cm long and 4 cm wide?", "answers": ["28 cm²", "22 cm²", "11 cm²", "14 cm²"], "correctIndex": 0, "explanation": "Area = length × width = 7 × 4 = 28 square centimetres." }
+    ]
+  },
+  {
+    "id": "world-explorer", "title": "World Explorer", "subject": "Geography", "description": "From oceans to capitals. Take your brain around the world.",
+    "questions": [
+      { "prompt": "What is the capital of Australia?", "answers": ["Canberra", "Sydney", "Melbourne", "Perth"], "correctIndex": 0, "explanation": "Canberra is Australia's national capital." },
+      { "prompt": "Which ocean is the largest?", "answers": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"], "correctIndex": 0, "explanation": "The Pacific Ocean is the largest ocean by surface area." },
+      { "prompt": "On which continent is Egypt?", "answers": ["Africa", "Europe", "South America", "Australia"], "correctIndex": 0, "explanation": "Most of Egypt is in northeastern Africa; the Sinai Peninsula is in Asia." },
+      { "prompt": "Which country has Tokyo as its capital?", "answers": ["Japan", "China", "South Korea", "Thailand"], "correctIndex": 0, "explanation": "Tokyo is the capital of Japan." },
+      { "prompt": "Which imaginary line divides Earth into Northern and Southern Hemispheres?", "answers": ["Equator", "Prime Meridian", "Tropic of Cancer", "Arctic Circle"], "correctIndex": 0, "explanation": "The Equator lies at 0° latitude." },
+      { "prompt": "Which continent is home to the Amazon rainforest?", "answers": ["South America", "Africa", "Asia", "Europe"], "correctIndex": 0, "explanation": "The Amazon basin spans several countries in South America." },
+      { "prompt": "Which country is shaped like a boot?", "answers": ["Italy", "Spain", "Greece", "Portugal"], "correctIndex": 0, "explanation": "Italy's peninsula is often described as boot-shaped." },
+      { "prompt": "Which is the world's largest hot desert?", "answers": ["Sahara", "Gobi", "Kalahari", "Arabian Desert"], "correctIndex": 0, "explanation": "The Sahara is the largest hot desert. Antarctica is the largest desert overall." }
+    ]
+  }
+]

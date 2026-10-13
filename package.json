@@ -1,0 +1,30 @@
+{
+  "name": "spark-arena",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./client/styles.css -o ./public/styles.css --minify",
+    "dev": "npm run build && node --watch --env-file-if-exists=.env server/index.js",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test",
+    "check": "node --check server/index.js && node --check server/game.js && node --check server/socket.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "4.3.0"
+  },
+  "overrides": {
+    "@parcel/watcher": "2.6.0"
+  }
+}
