@@ -6,3 +6,5 @@ await copyFile('public/favicon.svg', 'pages-dist/favicon.svg');
 await copyFile('data/quizzes.json', 'pages-dist/quizzes.json');
 await writeFile('pages-dist/.nojekyll', '');
 console.log('Built playable static game in pages-dist/');
+await copyFile('node_modules/peerjs/dist/peerjs.min.js', 'pages-dist/peerjs.min.js');
+await copyFile('node_modules/peerjs/LICENSE', 'pages-dist/peerjs-LICENSE.txt');

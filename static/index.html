@@ -1,18 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111019">
-  <meta name="description" content="Play Spark Arena: learn with quizzes, build streaks, and outsmart computer rivals with power-ups.">
-  <title>Spark Arena · Play & learn</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" type="module"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#162c35">
+<meta name="description" content="Crystal Run: a 2D learning game. Run, collect crystals, dodge drones, bank sparks, and race your friends online.">
+<title>Spark Arena · Crystal Run</title><link rel="icon" href="./favicon.svg"><link rel="stylesheet" href="./world.css"><script src="./peerjs.min.js"></script><script type="module" src="./world-app.js"></script>
 </head>
 <body>
-  <div id="app"><main class="main"><p class="panel">Loading your learning arena…</p></main></div>
-  <div id="toast" role="status" aria-live="polite"></div>
-  <noscript>Enable JavaScript to play Spark Arena.</noscript>
-</body>
-</html>
+<canvas id="world" tabindex="0" aria-label="2D Crystal Run arena. Use WASD or arrow keys to move, Space to dash, E to interact, and Q to use your rechargeable battery."></canvas>
+<header id="hud" hidden><div class="brand">ϟ <b>SPARK<span>ARENA</span></b><small>CRYSTAL RUN</small></div><div class="scoreboard"><div><small>BANKED</small><b><span id="score">0</span> ♦</b></div><div><small>BACKPACK</small><b id="cargo">0/20</b></div><div><small>TIME LEFT</small><b id="timer">3:00</b></div></div><div class="energy-box"><div><span>ϟ ENERGY</span><b id="energy">65</b></div><div class="energy-track"><i id="energy-fill"></i></div></div><div class="settings"><button id="sound" aria-pressed="false">♪ OFF</button><button id="pause" aria-label="Pause game">Ⅱ</button></div></header>
+<aside id="leader-panel"><div class="eyebrow">THE RUNNERS</div><div id="rankings"></div><canvas id="minimap" width="180" height="120" aria-label="Arena map: yellow vault, purple labs, blue garage"></canvas><p>♦ Vault &nbsp; ▣ Garage &nbsp; ? Labs</p></aside>
+<div id="hint" role="status">Loading the arena…</div>
+<div id="controls" hidden><div id="joystick" role="group" aria-label="Touch movement joystick"><div id="knob"></div></div><div class="action-buttons"><button id="recharge">ϟ RECHARGE <small>Q</small></button><button id="interact">INTERACT [E]</button><button id="dash">DASH <small>SPACE</small></button></div><span class="keyboard-hint">WASD / ARROWS TO MOVE · SPACE TO DASH</span></div>
+<div id="overlay"><section class="modal"><h2>Loading Crystal Run…</h2></section></div><noscript>Enable JavaScript to play this 2D game.</noscript>
+</body></html>
